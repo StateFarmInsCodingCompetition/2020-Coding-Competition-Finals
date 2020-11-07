@@ -5,7 +5,7 @@ Welcome to the 2020 State Farm Coding Competition Finals!
 Read the directions in '2020 Java Coding Competition Problem Statement.pdf'
 
 # Submitting
-Open a pull request against the StateFarmInsCodingCompetition/2020-StateFarm-CodingCompetitionProblem repository. Only one teammate needs to open a pull request.
+Open a pull request against the StateFarmInsCodingCompetition/2020-Coding-Competition-Finals repository. Only one teammate needs to open a pull request.
 
 # Dealing with new line characters
 https://help.github.com/articles/dealing-with-line-endings/
