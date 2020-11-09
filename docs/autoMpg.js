@@ -30,7 +30,7 @@ function updateChart() {
       type: chartType.value,
       data: {
           datasets: [{
-              data: [autoMpgData]
+              data: [dataset]
           }]
       },
       options: {
