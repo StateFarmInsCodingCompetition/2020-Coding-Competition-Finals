@@ -4,7 +4,7 @@ const xAxisSelect = document.getElementById('xAxisSelect');
 const yAxisSelect = document.getElementById('yAxisSelect');
 
 var dataset;
-$.get('./data/autoMpg.csv', function(data) {
+$.get('./data/auto-mpg.csv', function(data) {
   dataset = $.csv.toObjects(data);
   // add keys to both x and y axis select
   var keys = Object.keys(dataset[0])
