@@ -37,7 +37,10 @@ function updateChart() {
     filteredDataset.push(newObj);
   });
   console.log(filteredDataset);
-  myChart.destroy();
+  if (!(myChart === undefined)) {
+    myChart.destroy();
+
+  }
   var ctx = document.getElementById('chart').getContext('2d');
   myChart = new Chart(ctx, {
       type: chartType.value,
