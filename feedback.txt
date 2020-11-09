@@ -2,12 +2,16 @@ Your team (name of each individual participating): Mudit Gupta, Manoj Niverthi
 How many JUnits were you able to get to pass? 1
 
 Document and describe any enhancements included to help the judges properly grade your submission.
-	Step 1: We used python notebooks to perform data visualization on each of the data-sets.
-	    We have PDFs of our findings in the ./data-vis/ folder.
-	    The code for the visualizations can be found in the ./data-vis/notebooks folder.
-	        However, these files are hard to look at in a text editor, so it'd be best viewed in Jupyter Notebook or Google Colab.
-	    There are very detailed comments throughout the code about what each line does.
-	Step 2: 
-	
-	
+	Step 0: We decided to focus on visualizations using python, so we did little with the provided Java code.
+  Step 1: We used python notebooks to perform data visualization on two of the data-sets (Forest Fires and Auto-MPG).
+      We have PDFs of our visualizations in the ./data-vis/ folder.
+      The code for the visualizations can be found in the ./data-vis/notebooks folder.
+          However, these files are hard to look at in a text editor, so it'd be best viewed in Jupyter Notebook or Google Colab.
+					https://jupyter.org/install
+					https://colab.research.google.com/
+      There are detailed comments throughout the code about what each line does.
+  Step 2: For the Auto-MPG data-set, we created a machine learning model that can predict a vehicles MPG based on various features,
+      including horse power, cylinders, acceleration, weight, year made, etc.
+
+
 Feedback for the coding competition?  Things you would like to see in future events?
