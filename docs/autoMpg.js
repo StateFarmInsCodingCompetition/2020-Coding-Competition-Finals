@@ -26,44 +26,7 @@ $.get('./data/auto-mpg.csv', function(data) {
   
 });
 
-function testChart() {
-  dataset = [{mpg:"10", cylinders:"5"}, {mpg:"12", cylinders:"6"}];
-  xAxisSelect.value = "mpg";
-  yAxisSelect.value = "cylinders";
 
-  var ctx = document.getElementById('chart').getContext('2d');
-  myChart = new Chart(ctx, {
-    type: 'scatter',
-    data: {
-        datasets: [{
-            label: 'Scatter Dataset',
-            data: [{
-                a: "-10",
-                y: "0"
-            }, {
-                a: "0",
-                y: "10"
-            }, {
-                a: "10",
-                y: "5"
-            }],
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-            
-        }]
-    },
-    options: {
-      parsing: {
-        xAxisKey: "a"
-      },
-        scales: {
-            xAxes: [{
-                type: 'linear',
-                position: 'bottom'
-            }]
-        }
-    }
-});
-}
 // for dumym
 var myChart;
 //Load auto mpg chart
@@ -74,7 +37,7 @@ function updateChart() {
     filteredDataset.push(newObj);
   });
   console.log(filteredDataset);
-
+  myChart.destroy();
   var ctx = document.getElementById('chart').getContext('2d');
   myChart = new Chart(ctx, {
       type: chartType.value,
@@ -114,3 +77,43 @@ function updateChart() {
 }
 
 
+
+
+function testChart() {
+  dataset = [{mpg:"10", cylinders:"5"}, {mpg:"12", cylinders:"6"}];
+  xAxisSelect.value = "mpg";
+  yAxisSelect.value = "cylinders";
+
+  var ctx = document.getElementById('chart').getContext('2d');
+  myChart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+        datasets: [{
+            label: 'Scatter Dataset',
+            data: [{
+                a: "-10",
+                y: "0"
+            }, {
+                a: "0",
+                y: "10"
+            }, {
+                a: "10",
+                y: "5"
+            }],
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            
+        }]
+    },
+    options: {
+      parsing: {
+        xAxisKey: "a"
+      },
+        scales: {
+            xAxes: [{
+                type: 'linear',
+                position: 'bottom'
+            }]
+        }
+    }
+});
+}
