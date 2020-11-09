@@ -37,8 +37,8 @@ function updateChart() {
       type: chartType.value,
       data: {
           datasets: [{
-              label:"Data",
-              data: [dataset]
+              label: "Data",
+              data: dataset,
           }]
       },
       options: {
@@ -56,9 +56,6 @@ function updateChart() {
               display: true,
               labelString: yAxisSelect.value
             },
-            ticks: {
-              beginAtZero: true
-            }
           }],
           xAxes: [{
             scaleLabel: {
