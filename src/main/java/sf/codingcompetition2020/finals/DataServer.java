@@ -37,7 +37,7 @@ public class DataServer {
                 get("/adults", (req, res) -> {
                     return data.serveData(req, res, adultFilePath, Adult.class);
                 });
-                get("/autosMsg", (req, res) -> {
+                get("/autosMpg", (req, res) -> {
                     return data.serveData(req, res, autoMpgFilePath, AutoMpg.class);
                 });
                 get("/autos", (req, res) -> {

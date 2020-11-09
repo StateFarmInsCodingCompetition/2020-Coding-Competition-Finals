@@ -2,67 +2,84 @@ package sf.codingcompetition2020.finals.structures;
 
 //Feel free to change this class however you please
 public class AutoMpg {
-	private String mpg;
-	private String cylinders;
-	private String displacement;
-	private String horsepower;
-	private String weight;
-	private String acceleration;
-	private String modelYear;
-	private String origin;
+	private int mpg;
+	private int cylinders;
+	private int displacement;
+	private int horsepower;
+	private int weight;
+	private double acceleration;
+	private int modelYear;
+	private String origin; // this is multi-valued discrete
 	private String carName;
-	
-	public String getMpg() {
+
+	public int getMpg() {
 		return mpg;
 	}
-	public void setMpg(String mpg) {
+
+	public void setMpg(int mpg) {
 		this.mpg = mpg;
 	}
-	public String getCylinders() {
+
+	public int getCylinders() {
 		return cylinders;
 	}
-	public void setCylinders(String cylinders) {
+
+	public void setCylinders(int cylinders) {
 		this.cylinders = cylinders;
 	}
-	public String getDisplacement() {
+
+	public int getDisplacement() {
 		return displacement;
 	}
-	public void setDisplacement(String displacement) {
+
+	public void setDisplacement(int displacement) {
 		this.displacement = displacement;
 	}
-	public String getHorsepower() {
+
+	public int getHorsepower() {
 		return horsepower;
 	}
-	public void setHorsepower(String horsepower) {
+
+	public void setHorsepower(int horsepower) {
 		this.horsepower = horsepower;
 	}
-	public String getWeight() {
+
+	public int getWeight() {
 		return weight;
 	}
-	public void setWeight(String weight) {
+
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
-	public String getAcceleration() {
+
+	public double getAcceleration() {
 		return acceleration;
 	}
-	public void setAcceleration(String acceleration) {
+
+	public void setAcceleration(double acceleration) {
 		this.acceleration = acceleration;
 	}
-	public String getModelYear() {
+
+	public int getModelYear() {
 		return modelYear;
 	}
-	public void setModelYear(String modelYear) {
+
+	public void setModelYear(int modelYear) {
 		this.modelYear = modelYear;
 	}
+
 	public String getOrigin() {
 		return origin;
 	}
+
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
+
 	public String getCarName() {
 		return carName;
 	}
+
 	public void setCarName(String carName) {
 		this.carName = carName;
 	}
