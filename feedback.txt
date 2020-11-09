@@ -1,9 +1,9 @@
-Your team (name of each individual participating):
+Your team (name of each individual participating): Alex Kim and Ethan Xie
 How many JUnits were you able to get to pass? 
-
+N/A
 Document and describe any enhancements included to help the judges properly grade your submission.
-	Step 1:
-	Step 2: 
+	Step 1: Created a website to allow for visualizations of the data set. Allows for any dataset to be submitted and creates visualizations dynamically (you can choose the type of visualization and the features to be displayed on the x and y axis).
+	Step 2: Trained neural networks to make predictions based off the given dataset with over 80% accuracy on the Adults dataset.
 	
 	
 Feedback for the coding competition?  Things you would like to see in future events?
