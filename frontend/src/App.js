@@ -2,16 +2,30 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
+import { ModuleRegistry, AllModules } from '@ag-grid-enterprise/all-modules';
+
+import 'ag-grid-enterprise';
+import "@ag-grid-enterprise/all-modules/dist/styles/ag-grid.css";
+import "@ag-grid-enterprise/all-modules/dist/styles/ag-theme-alpine.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "ag-grid-community/dist/styles/ag-grid.css";
-import "ag-grid-community/dist/styles/ag-theme-alpine.css";
-import { ButtonGroup, Container, ToggleButton } from "react-bootstrap";
+import { ButtonGroup, Container, Spinner, ToggleButton } from "react-bootstrap";
+
+ModuleRegistry.registerModules(AllModules);
 
 function Data({ file }) {
-  const data = null;
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    setData(null);
+    axios.get(`/api/data/${file}`).then(({ data }) => {
+      console.log('loaded data', data);
+      setData(data);
+    });
+  }, [file]);
+
   if (!data) {
-    return <p>Loading...</p>;
+    return <Spinner animation="border" />;
   }
 
   const columns = Object.keys(data[0]);
@@ -56,27 +70,33 @@ function App() {
   ];
   const [radioValue, setRadioValue] = useState(options[0].value);
 
+  const selected = options.find((opt) => opt.value === radioValue);
+
   return (
     <Container>
       <div className="App">
         <h1>State Farm 2020 Finals</h1>
         <div className="toggler">
-        <ButtonGroup toggle>
-          {options.map((radio, idx) => (
-            <ToggleButton
-              key={idx}
-              type="radio"
-              name="radio"
-              value={radio.value}
-              checked={radioValue=== radio.value}
-              onChange={(e) => setRadioValue(e.currentTarget.value)}
-            >
-              {radio.name}
-            </ToggleButton>
-          ))}
-        </ButtonGroup></div>
+          <ButtonGroup toggle>
+            {options.map((radio, idx) => (
+              <ToggleButton
+                key={idx}
+                type="radio"
+                name="radio"
+                value={radio.value}
+                checked={radioValue === radio.value}
+                onChange={(e) => setRadioValue(e.currentTarget.value)}
+              >
+                {radio.name}
+              </ToggleButton>
+            ))}
+          </ButtonGroup>
+        </div>
         <br />
-        <Viewer title={options.find((opt) => opt.value == radioValue).name} file={radioValue} />
+        <Viewer
+          title={selected.name}
+          file={selected.value}
+        />
       </div>
     </Container>
   );
