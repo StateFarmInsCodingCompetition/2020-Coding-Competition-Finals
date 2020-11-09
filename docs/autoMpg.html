@@ -37,15 +37,29 @@
     <h2> Alex Kim and Ethan Xie </h2>
     <div class="divider"></div>
 
-    <h2> Auto-MPG Dataset Visulization </h2>
     <canvas id="chart" width="400" height="400"></canvas>
-    <label for="chartType">Chart Type</label>
-    <select id="chartType" onchange="updateChart()">
-      <option value="line">Line</option>
-      <option value="bar">Bar</option>
-      <option value="scatter">Scatter</option>
-    </select>
     
+    <div id="options">
+      <div class="colFlexBox">
+        <label for="chartType">Chart Type</label>
+        <select id="chartType" onchange="updateChart()">
+          <option value="line">Line</option>
+          <option value="bar">Bar</option>
+          <option value="scatter" selected>Scatter</option>
+        </select>
+      </div>  
+      <div class="colFlexBox">
+        <label for="xAxisSelect">X-Axis</label>
+        <select id="xAxisSelect"></select>
+      </div>
+      <div class="colFlexBox">
+        <label for="yAxisSelect">Y-Axis</label>
+        <select id="yAxisSelect"></select>
+      </div>
+    </div>
+    
+
+
 
 
 

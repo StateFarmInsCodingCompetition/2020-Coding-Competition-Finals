@@ -7,19 +7,22 @@ var dataset;
 $.get('./data/autoMpg.csv', function(data) {
   dataset = $.csv.toObjects(data);
   // add keys to both x and y axis select
-  Object.keys(dataset[0]).forEach(element => {
+  var keys = Object.keys(dataset[0])
+  keys.forEach(element => {
     var option = document.createElement("option");
     option.value = element;
     option.text = element;
     xAxisSelect.add(option);
     yAxisSelect.add(option)
   });
-
+  // set the default
+  xAxisSelect.value = keys[0];
+  yAxisSelect.value = keys[1];
+  updateChart();
   
 });
 
 
-// add all the keys to both x and y axis select
 
 
 
@@ -34,6 +37,10 @@ function updateChart() {
           }]
       },
       options: {
+        title: {
+          display: true,
+          text: "Auto MPG Dataset"
+        },
         parsing: {
           xAxisKey: xAxisSelect.value,
           yAxisKey: yAxisSelect.value
@@ -42,7 +49,7 @@ function updateChart() {
           yAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'HorsePower'
+              labelString: yAxisSelect.value
             },
             ticks: {
               beginAtZero: true
@@ -51,7 +58,7 @@ function updateChart() {
           xAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'Displacement'
+              labelString: xAxisSelect.value
             }
           }]
         }
