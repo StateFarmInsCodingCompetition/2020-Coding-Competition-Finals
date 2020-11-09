@@ -6,28 +6,28 @@ var forestFiresData;
 var seoulBikeData;
 
 $.get('./data/adults.csv', function(data) {
-  adultsData = $.csv.toObjects();
+  adultsData = $.csv.toObjects(data);
   console.log(adultsData)
 });
 
 $.get('/data/auto-mpg.csv', function(data) {
-  autoMpgData = $.csv.toObjects();
+  autoMpgData = $.csv.toObjects(data);
 });
 
 $.get('./data/autos.csv', function(data) {
-  autosData = $.csv.toObjects();
+  autosData = $.csv.toObjects(data);
 });
 
 $.get('./data/cars.csv', function(data) {
-  carsData = $.csv.toObjects();
+  carsData = $.csv.toObjects(data);
 });
 
 $.get('./data/forest-fires.csv', function(data) {
-  forestFiresData = $.csv.toObjects();
+  forestFiresData = $.csv.toObjects(data);
 });
 
 $.get('./data/seoul-bike-data.csv', function(data) {
-  seoulBikeData = $.csv.toObjects();
+  seoulBikeData = $.csv.toObjects(data);
 });
 
 //Load adults chart
@@ -73,7 +73,7 @@ var myChart = new Chart(ctx, {
 //Load auto mpg chart
 var ctx = document.getElementById('autoMpgChart').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
@@ -230,7 +230,7 @@ var myChart = new Chart(ctx, {
 });
 
 //Load seoul bike data
-var ctx = document.getElementById('seoulBikeDataChart').getContext('2d');
+var ctx = document.getElementById('seoulBikeChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
