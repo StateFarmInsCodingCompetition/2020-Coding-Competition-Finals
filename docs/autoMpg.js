@@ -65,7 +65,6 @@ function testChart() {
 });
 }
 // for dumym
-var dataset = [{mpg:10, cylinders:5}, {mpg:12, cylinders:6}];
 var myChart;
 //Load auto mpg chart
 function updateChart() {
@@ -75,11 +74,10 @@ function updateChart() {
     filteredDataset.push(newObj);
   });
   console.log(filteredDataset);
-  
-  dataset = [{mpg:10, cylinders:5}, {mpg:12, cylinders:6}];
+
   var ctx = document.getElementById('chart').getContext('2d');
   myChart = new Chart(ctx, {
-      type: "scatter",
+      type: chartType.value,
       data: {
           datasets: [{
               label: "Data",
@@ -88,11 +86,10 @@ function updateChart() {
           }]
       },
       options: {
-        parsing: {
-          xAxisKey: "mpg",
-          yAxisKey: "cylinders"
-        },
-
+        // parsing: {
+        //   xAxisKey: "mpg",
+        //   yAxisKey: "cylinders"
+        // },
         title: {
           display: true,
           text: "Auto MPG Dataset"
