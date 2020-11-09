@@ -2,99 +2,124 @@ package sf.codingcompetition2020.finals.structures;
 
 //Feel free to change this class however you please
 public class ForestFire {
-	private String x;
-	private String y;
+	private Double x;
+	private Double y;
 	private String month;
 	private String day;
-	private String ffmc;
-	private String dmc;
-	private String dc;
-	private String isi;
-	private String temp;
-	private String rh;
-	private String wind;
-	private String rain;
-	private String area;
-	
-	public String getX() {
+	private Double ffmc;
+	private Double dmc;
+	private Double dc;
+	private Double isi;
+	private Double temp;
+	private Double rh;
+	private Double wind;
+	private Double rain;
+	private Double area;
+
+	public Double getX() {
 		return x;
 	}
-	public void setX(String x) {
+
+	public void setX(Double x) {
 		this.x = x;
 	}
-	public String getY() {
+
+	public Double getY() {
 		return y;
 	}
-	public void setY(String y) {
+
+	public void setY(Double y) {
 		this.y = y;
 	}
+
 	public String getMonth() {
 		return month;
 	}
+
 	public void setMonth(String month) {
 		this.month = month;
 	}
+
 	public String getDay() {
 		return day;
 	}
+
 	public void setDay(String day) {
 		this.day = day;
 	}
-	public String getFfmc() {
+
+	public Double getFfmc() {
 		return ffmc;
 	}
-	public void setFfmc(String ffmc) {
+
+	public void setFfmc(Double ffmc) {
 		this.ffmc = ffmc;
 	}
-	public String getDmc() {
+
+	public Double getDmc() {
 		return dmc;
 	}
-	public void setDmc(String dmc) {
+
+	public void setDmc(Double dmc) {
 		this.dmc = dmc;
 	}
-	public String getDc() {
+
+	public Double getDc() {
 		return dc;
 	}
-	public void setDc(String dc) {
+
+	public void setDc(Double dc) {
 		this.dc = dc;
 	}
-	public String getIsi() {
+
+	public Double getIsi() {
 		return isi;
 	}
-	public void setIsi(String isi) {
+
+	public void setIsi(Double isi) {
 		this.isi = isi;
 	}
-	public String getTemp() {
+
+	public Double getTemp() {
 		return temp;
 	}
-	public void setTemp(String temp) {
+
+	public void setTemp(Double temp) {
 		this.temp = temp;
 	}
-	public String getRh() {
+
+	public Double getRh() {
 		return rh;
 	}
-	public void setRh(String rh) {
+
+	public void setRh(Double rh) {
 		this.rh = rh;
 	}
-	public String getWind() {
+
+	public Double getWind() {
 		return wind;
 	}
-	public void setWind(String wind) {
+
+	public void setWind(Double wind) {
 		this.wind = wind;
 	}
-	public String getRain() {
+
+	public Double getRain() {
 		return rain;
 	}
-	public void setRain(String rain) {
+
+	public void setRain(Double rain) {
 		this.rain = rain;
 	}
-	public String getArea() {
+
+	public Double getArea() {
 		return area;
 	}
-	public void setArea(String area) {
+
+	public void setArea(Double area) {
 		this.area = area;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "ForestFire [x=" + x + ", y=" + y + ", month=" + month + ", day=" + day + ", ffmc=" + ffmc + ", dmc="

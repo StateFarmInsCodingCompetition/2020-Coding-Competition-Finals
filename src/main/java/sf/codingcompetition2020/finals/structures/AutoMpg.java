@@ -2,71 +2,88 @@ package sf.codingcompetition2020.finals.structures;
 
 //Feel free to change this class however you please
 public class AutoMpg {
-	private String mpg;
-	private String cylinders;
-	private String displacement;
-	private String horsepower;
-	private String weight;
-	private String acceleration;
-	private String modelYear;
-	private String origin;
+	private Double mpg;
+	private Integer cylinders;
+	private Double displacement;
+	private Integer horsepower;
+	private Integer weight;
+	private Double acceleration;
+	private Integer modelYear;
+	private String origin; // this is multi-valued discrete
 	private String carName;
-	
-	public String getMpg() {
+
+	public Double getMpg() {
 		return mpg;
 	}
-	public void setMpg(String mpg) {
+
+	public void setMpg(Double mpg) {
 		this.mpg = mpg;
 	}
-	public String getCylinders() {
+
+	public Integer getCylinders() {
 		return cylinders;
 	}
-	public void setCylinders(String cylinders) {
+
+	public void setCylinders(Integer cylinders) {
 		this.cylinders = cylinders;
 	}
-	public String getDisplacement() {
+
+	public Double getDisplacement() {
 		return displacement;
 	}
-	public void setDisplacement(String displacement) {
+
+	public void setDisplacement(Double displacement) {
 		this.displacement = displacement;
 	}
-	public String getHorsepower() {
+
+	public Integer getHorsepower() {
 		return horsepower;
 	}
-	public void setHorsepower(String horsepower) {
+
+	public void setHorsepower(Integer horsepower) {
 		this.horsepower = horsepower;
 	}
-	public String getWeight() {
+
+	public Integer getWeight() {
 		return weight;
 	}
-	public void setWeight(String weight) {
+
+	public void setWeight(Integer weight) {
 		this.weight = weight;
 	}
-	public String getAcceleration() {
+
+	public Double getAcceleration() {
 		return acceleration;
 	}
-	public void setAcceleration(String acceleration) {
+
+	public void setAcceleration(Double acceleration) {
 		this.acceleration = acceleration;
 	}
-	public String getModelYear() {
+
+	public Integer getModelYear() {
 		return modelYear;
 	}
-	public void setModelYear(String modelYear) {
+
+	public void setModelYear(Integer modelYear) {
 		this.modelYear = modelYear;
 	}
+
 	public String getOrigin() {
 		return origin;
 	}
+
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
+
 	public String getCarName() {
 		return carName;
 	}
+
 	public void setCarName(String carName) {
 		this.carName = carName;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "AutoMpg [mpg=" + mpg + ", cylinders=" + cylinders + ", displacement=" + displacement + ", horsepower="
