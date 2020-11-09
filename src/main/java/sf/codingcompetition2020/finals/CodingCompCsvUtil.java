@@ -19,7 +19,7 @@ public class CodingCompCsvUtil {
 		@Override
 		public Object handleWeirdStringValue(DeserializationContext ctxt, Class<?> targetType, String valueToConvert, String failureMsg) throws IOException {
 			if (valueToConvert.equals("?")) {
-				System.out.println("Suppressing error " + failureMsg);
+				// Suppress instances of missing data.
 				return null;
 			}
 			return NOT_HANDLED;
