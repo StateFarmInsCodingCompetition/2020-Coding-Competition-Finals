@@ -2,8 +2,8 @@ package sf.codingcompetition2020.finals.structures;
 
 //Feel free to change this class however you please
 public class Auto {
-	private String symboling;
-	private String normalizedLosses;
+	private Integer symboling;
+	private Integer normalizedLosses;
 	private String make;
 	private String fuelType;
 	private String aspiration;
@@ -11,181 +11,232 @@ public class Auto {
 	private String bodyStyle;
 	private String driveWheels;
 	private String engineLocation;
-	private String wheelBase;
-	private String length;
-	private String width;
-	private String height;
-	private String curbWeight;
+	private Double wheelBase;
+	private Double length;
+	private Double width;
+	private Double height;
+	private Double curbWeight;
 	private String engineType;
 	private String numOfCylinders;
-	private String engineSize;
+	private Integer engineSize;
 	private String fuelSystem;
-	private String bore;
-	private String stroke;
-	private String compressionRatio;
-	private String horsepower;
-	private String peakRpm;
-	private String cityMpg;
-	private String highwayMpg;
-	private String price;
-	
-	public String getSymboling() {
+	private Double bore;
+	private Double stroke;
+	private Double compressionRatio;
+	private Double horsepower;
+	private Double peakRpm;
+	private Double cityMpg;
+	private Double highwayMpg;
+	private Double price;
+
+	public Integer getSymboling() {
 		return symboling;
 	}
-	public void setSymboling(String symboling) {
+
+	public void setSymboling(Integer symboling) {
 		this.symboling = symboling;
 	}
-	public String getNormalizedLosses() {
+
+	public Integer getNormalizedLosses() {
 		return normalizedLosses;
 	}
-	public void setNormalizedLosses(String normalizedLosses) {
+
+	public void setNormalizedLosses(Integer normalizedLosses) {
 		this.normalizedLosses = normalizedLosses;
 	}
+
 	public String getMake() {
 		return make;
 	}
+
 	public void setMake(String make) {
 		this.make = make;
 	}
+
 	public String getFuelType() {
 		return fuelType;
 	}
+
 	public void setFuelType(String fuelType) {
 		this.fuelType = fuelType;
 	}
+
 	public String getAspiration() {
 		return aspiration;
 	}
+
 	public void setAspiration(String aspiration) {
 		this.aspiration = aspiration;
 	}
+
 	public String getNumOfDoors() {
 		return numOfDoors;
 	}
+
 	public void setNumOfDoors(String numOfDoors) {
 		this.numOfDoors = numOfDoors;
 	}
+
 	public String getBodyStyle() {
 		return bodyStyle;
 	}
+
 	public void setBodyStyle(String bodyStyle) {
 		this.bodyStyle = bodyStyle;
 	}
+
 	public String getDriveWheels() {
 		return driveWheels;
 	}
+
 	public void setDriveWheels(String driveWheels) {
 		this.driveWheels = driveWheels;
 	}
+
 	public String getEngineLocation() {
 		return engineLocation;
 	}
+
 	public void setEngineLocation(String engineLocation) {
 		this.engineLocation = engineLocation;
 	}
-	public String getWheelBase() {
+
+	public Double getWheelBase() {
 		return wheelBase;
 	}
-	public void setWheelBase(String wheelBase) {
+
+	public void setWheelBase(Double wheelBase) {
 		this.wheelBase = wheelBase;
 	}
-	public String getLength() {
+
+	public Double getLength() {
 		return length;
 	}
-	public void setLength(String length) {
+
+	public void setLength(Double length) {
 		this.length = length;
 	}
-	public String getWidth() {
+
+	public Double getWidth() {
 		return width;
 	}
-	public void setWidth(String width) {
+
+	public void setWidth(Double width) {
 		this.width = width;
 	}
-	public String getHeight() {
+
+	public Double getHeight() {
 		return height;
 	}
-	public void setHeight(String height) {
+
+	public void setHeight(Double height) {
 		this.height = height;
 	}
-	public String getCurbWeight() {
+
+	public Double getCurbWeight() {
 		return curbWeight;
 	}
-	public void setCurbWeight(String curbWeight) {
+
+	public void setCurbWeight(Double curbWeight) {
 		this.curbWeight = curbWeight;
 	}
+
 	public String getEngineType() {
 		return engineType;
 	}
+
 	public void setEngineType(String engineType) {
 		this.engineType = engineType;
 	}
+
 	public String getNumOfCylinders() {
 		return numOfCylinders;
 	}
+
 	public void setNumOfCylinders(String numOfCylinders) {
 		this.numOfCylinders = numOfCylinders;
 	}
-	public String getEngineSize() {
+
+	public Integer getEngineSize() {
 		return engineSize;
 	}
-	public void setEngineSize(String engineSize) {
+
+	public void setEngineSize(Integer engineSize) {
 		this.engineSize = engineSize;
 	}
+
 	public String getFuelSystem() {
 		return fuelSystem;
 	}
+
 	public void setFuelSystem(String fuelSystem) {
 		this.fuelSystem = fuelSystem;
 	}
-	public String getBore() {
+
+	public Double getBore() {
 		return bore;
 	}
-	public void setBore(String bore) {
+
+	public void setBore(Double bore) {
 		this.bore = bore;
 	}
-	public String getStroke() {
+
+	public Double getStroke() {
 		return stroke;
 	}
-	public void setStroke(String stroke) {
+
+	public void setStroke(Double stroke) {
 		this.stroke = stroke;
 	}
-	public String getCompressionRatio() {
+
+	public Double getCompressionRatio() {
 		return compressionRatio;
 	}
-	public void setCompressionRatio(String compressionRatio) {
+
+	public void setCompressionRatio(Double compressionRatio) {
 		this.compressionRatio = compressionRatio;
 	}
-	public String getHorsepower() {
+
+	public Double getHorsepower() {
 		return horsepower;
 	}
-	public void setHorsepower(String horsepower) {
+
+	public void setHorsepower(Double horsepower) {
 		this.horsepower = horsepower;
 	}
-	public String getPeakRpm() {
+
+	public Double getPeakRpm() {
 		return peakRpm;
 	}
-	public void setPeakRpm(String peakRpm) {
+
+	public void setPeakRpm(Double peakRpm) {
 		this.peakRpm = peakRpm;
 	}
-	public String getCityMpg() {
+
+	public Double getCityMpg() {
 		return cityMpg;
 	}
-	public void setCityMpg(String cityMpg) {
+
+	public void setCityMpg(Double cityMpg) {
 		this.cityMpg = cityMpg;
 	}
-	public String getHighwayMpg() {
+
+	public Double getHighwayMpg() {
 		return highwayMpg;
 	}
-	public void setHighwayMpg(String highwayMpg) {
+
+	public void setHighwayMpg(Double highwayMpg) {
 		this.highwayMpg = highwayMpg;
 	}
-	public String getPrice() {
+
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+
+	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Autos [symboling=" + symboling + ", normalizedLosses=" + normalizedLosses + ", make=" + make

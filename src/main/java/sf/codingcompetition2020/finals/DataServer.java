@@ -1,6 +1,7 @@
 package sf.codingcompetition2020.finals;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import sf.codingcompetition2020.finals.structures.*;
 import spark.Request;
 import spark.Response;
@@ -17,7 +18,7 @@ public class DataServer {
     private static final String forestFiresFilePath = "src/main/resources/DataFiles/forest-fires.csv";
     private static final String seoulBikeDataFilePath = "src/main/resources/DataFiles/seoul-bike-data.csv";
 
-    private final Gson gson = new Gson();
+    private final Gson gson = new GsonBuilder().serializeNulls().create();
     private final CodingCompCsvUtil codingCompCsvUtil = new CodingCompCsvUtil();
 
     private <T> String serveData(Request req, Response res, String filePath, Class<T> classType) {
