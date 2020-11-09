@@ -1,5 +1,5 @@
 var adultsData;
-var autosMpgData;
+var autoMpgData;
 var autosData;
 var carsData;
 var forestFiresData;
@@ -11,7 +11,7 @@ $.get('./data/adults.csv', function(data) {
 });
 
 $.get('./data/auto-mpg.csv', function(data) {
-  autosMpgData = $.csv.toObjects(data);
+  autoMpgData = $.csv.toObjects(data);
 });
 
 $.get('./data/autos.csv', function(data) {
