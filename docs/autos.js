@@ -4,7 +4,7 @@ const xAxisSelect = document.getElementById('xAxisSelect');
 const yAxisSelect = document.getElementById('yAxisSelect');
 
 var dataset;
-$.get('./data/seoul-bike-data.csv', function(data) {
+$.get('./data/autos.csv', function(data) {
   dataset = $.csv.toObjects(data);
   // add keys to both x and y axis select
   var keys = Object.keys(dataset[0])
@@ -57,7 +57,7 @@ function updateChart() {
         // },
         title: {
           display: true,
-          text: "Seoul Bikes Dataset"
+          text: "Auto MPG Dataset"
         },
         
         scales: {
