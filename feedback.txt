@@ -1,9 +1,12 @@
-Your team (name of each individual participating):
-How many JUnits were you able to get to pass? 
+Your team (name of each individual participating): Harshal Sheth
+How many JUnits were you able to get to pass? 1/1
 
-Document and describe any enhancements included to help the judges properly grade your submission.
-	Step 1:
-	Step 2: 
-	
-	
+To run:
+- start the main method of the DataServer class
+- run: cd frontend && yarn && yarn start
+
+I added a web interface that can be used for analysis, and also worked on
+a prediction interface for some of the datasets.
+
 Feedback for the coding competition?  Things you would like to see in future events?
+It was good, and well-adapted to the virtual format.

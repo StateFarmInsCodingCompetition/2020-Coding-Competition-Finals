@@ -1,33 +1,75 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
-import { ModuleRegistry, AllModules } from '@ag-grid-enterprise/all-modules';
+import { ModuleRegistry, AllModules } from "@ag-grid-enterprise/all-modules";
 
-import 'ag-grid-enterprise';
+import "ag-grid-enterprise";
 import "@ag-grid-enterprise/all-modules/dist/styles/ag-grid.css";
 import "@ag-grid-enterprise/all-modules/dist/styles/ag-theme-alpine.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ButtonGroup, Container, Spinner, ToggleButton } from "react-bootstrap";
 
+import MLR from "ml-regression-multivariate-linear";
+
 ModuleRegistry.registerModules(AllModules);
 
-function Data({ file }) {
-  const [data, setData] = useState(null);
+async function train(data, output, columns) {
+  // Filter anything with a null.
+  let input = data.filter((row) => {
+    return columns.every((col) => row[col] !== null);
+  });
 
-  useEffect(() => {
-    setData(null);
-    axios.get(`/api/data/${file}`).then(({ data }) => {
-      console.log('loaded data', data);
-      setData(data);
-    });
-  }, [file]);
+  // Convert to categorical as necessary.
+  columns.forEach((col) => {
+    // Detect if categorical.
+    if (typeof input[0] !== "number") {
+      const values = input.map((row) => row[col]);
+      values.sort();
 
-  if (!data) {
-    return <Spinner animation="border" />;
+      input.forEach((row) => {
+        const value = row[col];
+        const cat = values.findIndex((v) => v === value);
+        row[col] = cat;
+      });
+    }
+  });
+
+  // Downsample to a max of 1000.
+  const MAX_SAMPLES = 10;
+  if (input.length > MAX_SAMPLES) {
+    input = input.slice(0, MAX_SAMPLES);
   }
 
+  const X_cols = columns.filter((c) => c !== output);
+  const X = input.map((row) => {
+    return X_cols.map((col) => row[col]);
+  });
+
+  const Y = input.map((row) => row[output]);
+
+  console.log("attempting training");
+  // const mlr = new MLR(X, Y);
+  return null;
+  // return mlr;
+}
+
+function Predictor({ data, output }) {
+  const columns = useMemo(() => {
+    return Object.keys(data[0]);
+  }, [data]);
+
+  const [model, setModel] = useState(null);
+
+  useEffect(() => {
+    train(data, output, columns).then((m) => setModel(m));
+  }, [data, output, columns]);
+
+  return null;
+}
+
+function Grid({ data }) {
   const columns = Object.keys(data[0]);
 
   return (
@@ -50,18 +92,34 @@ function Data({ file }) {
   );
 }
 
-function Viewer({ title, file }) {
+function Viewer({ title, file, output }) {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    setData(null);
+    axios.get(`/api/data/${file}`).then(({ data }) => {
+      setData(data);
+    });
+  }, [file]);
+
   return (
     <>
       <h2>Viewing: {title}</h2>
-      <Data file={file} />
+      {data ? (
+        <>
+          <Grid data={data} />
+          <Predictor data={data} output={output} />
+        </>
+      ) : (
+        <Spinner animation="border" />
+      )}
     </>
   );
 }
 
 function App() {
   const options = [
-    { name: "Adults", value: "adults" },
+    { name: "Adults", value: "adults", output: "probabilityLabel" },
     { name: "Automobile MPG", value: "autosMpg" },
     { name: "Automobiles", value: "autos" },
     { name: "Cars", value: "cars" },
@@ -96,6 +154,7 @@ function App() {
         <Viewer
           title={selected.name}
           file={selected.value}
+          output={selected.output}
         />
       </div>
     </Container>
