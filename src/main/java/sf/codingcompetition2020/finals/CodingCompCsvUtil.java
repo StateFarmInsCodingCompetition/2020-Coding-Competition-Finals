@@ -13,7 +13,6 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
 public class CodingCompCsvUtil {
 	
-	//#1
 	//read a CSV File and return a List of that File
 	public <T> List<T> readCsvFile(String filePath, Class<T> classType) {
 		List<T> resultsList = new ArrayList<>();
