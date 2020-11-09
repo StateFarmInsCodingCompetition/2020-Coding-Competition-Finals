@@ -1,0 +1,29 @@
+---
+title: "Bike Data"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+#### In this short notebook, I'll be looking at the bike data set and trying to analyze the significance of how Bikes are rented over time in Seoul
+
+
+First we need to load in the data set
+```{r}
+bike_data <- read.csv("SeoulBikeData.csv")
+```
+
+Finally, we can plot thline graph for each date
+```{r}
+bike_plot = ggplot(data=bike_data, aes(x=Hour, y=Rented.Bike.Count, group=Date)) + geom_line() + xlab("Hour") + ylab("Bike Count")
+bike_plot
+```
+
+
+
+You may be wondering why this data is significant. This distribution is bimodal and appears to be memoryless. Hence, we can conclude that at any given hour, we can predict what the next number of bike counts is going to be. This will directly correlate with the traffic at any given time in Seoul
+
+While this data is directly applied to Seoul, I believe that its significance can be applied to traffic in any big city. Thus, an actuarial scientist would be able to use this data to predict how busy the streets would be throughout the day, and in turn correlate that to the number of accidents
