@@ -4,7 +4,7 @@ const xAxisSelect = document.getElementById('xAxisSelect');
 const yAxisSelect = document.getElementById('yAxisSelect');
 
 var dataset;
-$.get('./data/auto-mpg.csv', function(data) {
+$.get('./data/adults.csv', function(data) {
   dataset = $.csv.toObjects(data);
   // add keys to both x and y axis select
   var keys = Object.keys(dataset[0])
@@ -13,7 +13,7 @@ $.get('./data/auto-mpg.csv', function(data) {
     option.value = element;
     option.text = element;
     xAxisSelect.add(option);
-
+    
     option = document.createElement("option");
     option.value = element;
     option.text = element;
@@ -37,14 +37,14 @@ function updateChart() {
       type: chartType.value,
       data: {
           datasets: [{
-              label:"Data",
+              label: "Data",
               data: [dataset]
           }]
       },
       options: {
         title: {
           display: true,
-          text: "Auto MPG Dataset"
+          text: "Adults Dataset"
         },
         parsing: {
           xAxisKey: xAxisSelect.value,
