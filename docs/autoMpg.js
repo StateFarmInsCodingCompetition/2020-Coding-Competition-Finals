@@ -27,11 +27,16 @@ $.get('./data/auto-mpg.csv', function(data) {
 });
 
 
-
+// for dumym
+var dataset = [{mpg:"10", cylinders:"5"}, {mpg:"12", cylinders:"6"}];
 
 
 //Load auto mpg chart
 function updateChart() {
+  dataset = [{mpg:"10", cylinders:"5"}, {mpg:"12", cylinders:"6"}];
+  xAxisSelect.value = "mpg";
+  yAxisSelect.value = "cylinders";
+
   var ctx = document.getElementById('chart').getContext('2d');
   var myChart = new Chart(ctx, {
       type: chartType.value,
@@ -39,6 +44,11 @@ function updateChart() {
           datasets: [{
               label: "Data",
               data: dataset,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              parsing: {
+                xAxisKey: "mpg",
+                yAxisKey: "cylinders"
+              },
           }]
       },
       options: {
@@ -47,8 +57,8 @@ function updateChart() {
           text: "Auto MPG Dataset"
         },
         parsing: {
-          xAxisKey: xAxisSelect.value,
-          yAxisKey: yAxisSelect.value
+          xAxisKey: "mpg",
+          yAxisKey: "cylinders"
         },
         scales: {
           yAxes: [{
