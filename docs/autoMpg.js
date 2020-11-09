@@ -13,7 +13,11 @@ $.get('./data/auto-mpg.csv', function(data) {
     option.value = element;
     option.text = element;
     xAxisSelect.add(option);
-    yAxisSelect.add(option)
+    
+    option = document.createElement("option");
+    option.value = element;
+    option.text = element;
+    yAxisSelect.add(option);
   });
   // set the default
   xAxisSelect.value = keys[0];
